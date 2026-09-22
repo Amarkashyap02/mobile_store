@@ -1,15 +1,12 @@
 name: Deploy Mobile Store
-on:
+on: 
    push:
-      branches: [ "main" ]
+     branches: [ "main" ]
 jobs:
    build-and-test:
-      runs-on:  ubuntu-latest
-
-      steps:
-      -  name:  Checkout Code
-         uses:  actions/checkout@v4
-
-      -  name: Build Docker Image
-         run:
-                docker build -t mobile-store
+      runs-on: ubuntu-latest
+    steps: 
+     -  name: Checkout Code 
+        uses: actions/checkout@v4
+     -  name: build Docker image
+        run: docker build -t mobile-store
